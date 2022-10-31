@@ -10,6 +10,11 @@ const jump = () => {
     }, 700);
 }
 
+function acao() {
+    let modal = document.querySelector('.modal')
+    modal.style.display = 'block';
+}
+
 const loop = setInterval(() => {
 
     const pipePosition = pipe.offsetLeft;
@@ -30,9 +35,12 @@ const loop = setInterval(() => {
         clouds.style.animation = 'none';
         clouds.style.left = `${cloudsPosition}px`;
 
+        acao();
+
         clearInterval(loop);
     }
 
 }, 10)
 
 document.addEventListener('keydown', jump);
+document.addEventListener('touchstart', jump);
